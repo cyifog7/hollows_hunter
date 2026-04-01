@@ -16,3 +16,6 @@ build/
 *.ini
 .vs/
 docs/
+.claude/
+.appveyor.yml
+.github/
