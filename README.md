@@ -21,7 +21,6 @@
 Hollows Hunter scans running processes for in-memory threats: replaced/implanted PEs, shellcodes, hooks, patches, and more. Built on top of [PE-sieve](https://github.com/hasherezade/pe-sieve), with added features:
 
 - **VirusTotal integration** — automatic hash lookup for every suspicious dump
-- **Config file** — `hollows_hunter.ini` generated on first run, no need to repeat CLI args
 - **Rate limiting** — respects VT free tier (4 req/min)
 - **Admin enforcement** — requires elevation via manifest + runtime check
 - **ETW monitoring** — real-time event-driven scanning (64-bit)
@@ -100,37 +99,7 @@ vt_api_key = "YOUR_VT_API_KEY_HERE";
 
 Get a free key at [virustotal.com/gui/join-us](https://www.virustotal.com/gui/join-us) (4 lookups/min on free tier).
 
-Then rebuild. Alternatively, pass it via CLI with `/vt <key>` or set it in `hollows_hunter.ini`.
-
-## Configuration
-
-On first run, `hollows_hunter.ini` is created next to the executable:
-
-```ini
-; HollowsHunter configuration
-; CLI arguments override these values
-
-; Skip VT lookups for these processes (separated by ;)
-vt_ignore=AnyDesk.exe
-
-; Ignore these processes from scanning (separated by ;)
-pignore=
-
-; Output directory
-dir=hollows_hunter.dumps
-
-; Options: true/false
-quiet=false
-log=false
-json=false
-loop=false
-unique_dir=false
-hooks=false
-suspend=false
-kill=false
-```
-
-CLI arguments always take priority over the config file.
+Then rebuild. Alternatively, pass it via CLI with `/vt <key>`.
 
 ## Parameters
 
