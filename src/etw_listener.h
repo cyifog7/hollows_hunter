@@ -18,7 +18,7 @@
 #include <time.h>
 
 // ETW includes
-#include "krabsetw/krabs/krabs.hpp"
+#include "deps/krabsetw/krabs/krabs.hpp"
 #include "etw_settings.h"
 
 

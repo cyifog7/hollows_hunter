@@ -36,10 +36,10 @@ endif()
 set ( M_PESIEVE "pe-sieve" )
 set ( M_PARAMKIT "paramkit" )
 
-set (PESIEVE_DIR "${PROJECT_SOURCE_DIR}/${M_PESIEVE}" CACHE PATH "PE-sieve main path")
+set (PESIEVE_DIR "${PROJECT_SOURCE_DIR}/deps/${M_PESIEVE}" CACHE PATH "PE-sieve main path")
 include_directories ( ${PESIEVE_DIR}/include )
 
-set (PARAMKIT_DIR "${CMAKE_SOURCE_DIR}/${M_PARAMKIT}/${M_PARAMKIT}" CACHE PATH "ParamKit main path" )
+set (PARAMKIT_DIR "${CMAKE_SOURCE_DIR}/deps/${M_PARAMKIT}/${M_PARAMKIT}" CACHE PATH "ParamKit main path" )
 include_directories ( ${PARAMKIT_DIR}/include )
 
 set (srcs
@@ -86,7 +86,7 @@ if(USE_ETW)
 		${hdrs}
 		src/etw_listener.h
 		src/etw_settings.h
-		krabsetw/krabs/krabs.hpp
+		deps/krabsetw/krabs/krabs.hpp
 	)
 endif()
 
